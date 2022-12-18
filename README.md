@@ -6,4 +6,4 @@ This basic CRUD web app can manage the list of employee. It uses the same fronte
 
 <p>Backend:</p> <div> <img src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png" width="30"/> <img src="https://user-images.githubusercontent.com/25181517/183859966-a3462d8d-1bc7-4880-b353-e2cbed900ed6.png" width="30"/></div>
 
-<p>Database:</p> <div> <img src="https://user-images.githubusercontent.com/25181517/182884177-d48a8579-2cd0-447a-b9a6-ffc7cb02560e.png" width="30"/></div>
+<p>Database:</p> <div> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" width="30"/></div>
