@@ -4,6 +4,8 @@ const app = express();
 const mysql = require("mysql2");
 
 app.use(cors());
+//to let api use the JSON body in request
+app.use(express.json());
 
 // create the connection to database
 const connection = mysql.createConnection({
@@ -31,7 +33,22 @@ app.get("/users/:id", function (req, res) {
   );
 });
 
-
+//create user
+app.post("/users", function (req, res) {
+  connection.query(
+    "INSERT INTO `users`(`fname`, `lname`, `username`, `email`, `avatar`) VALUES (?,?,?,?,?)",
+    [
+      req.body.fname,
+      req.body.lname,
+      req.body.username,
+      req.body.email,
+      req.body.avatar,
+    ],
+    function (err, results) {
+      res.json(results);
+    }
+  );
+});
 
 app.listen(5000, function () {
   console.log("Web server listening on port 5000");
