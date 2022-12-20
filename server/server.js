@@ -69,6 +69,16 @@ app.put("/users/:id", function (req, res) {
   );
 });
 
+//delete user
+app.delete("/users/delete", function (req, res){
+  const id = req.body.id
+  connection.query("DELETE FROM `users` WHERE id=?",
+  [id],
+  function (err, results) {
+    res.json(results);
+  })
+})
+
 app.listen(5000, function () {
   console.log("Web server listening on port 5000");
 });
