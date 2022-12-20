@@ -50,6 +50,25 @@ app.post("/users", function (req, res) {
   );
 });
 
+//update user information with id
+app.put("/users/:id", function (req, res) {
+  const id = req.params.id
+  connection.query(
+    "UPDATE `users` SET `fname`=?,`lname`=?,`username`=?,`email`=?,`avatar`=? WHERE id=?",
+    [
+      req.body.fname,
+      req.body.lname,
+      req.body.username,
+      req.body.email,
+      req.body.avatar,
+      id
+    ],
+    function (err, results) {
+      res.json(results);
+    }
+  );
+});
+
 app.listen(5000, function () {
   console.log("Web server listening on port 5000");
 });
