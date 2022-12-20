@@ -52,7 +52,7 @@ app.post("/users", function (req, res) {
 
 //update user information with id
 app.put("/users/:id", function (req, res) {
-  const id = req.params.id
+  const id = req.params.id;
   connection.query(
     "UPDATE `users` SET `fname`=?,`lname`=?,`username`=?,`email`=?,`avatar`=? WHERE id=?",
     [
@@ -61,7 +61,7 @@ app.put("/users/:id", function (req, res) {
       req.body.username,
       req.body.email,
       req.body.avatar,
-      id
+      id,
     ],
     function (err, results) {
       res.json(results);
@@ -70,14 +70,16 @@ app.put("/users/:id", function (req, res) {
 });
 
 //delete user
-app.delete("/users/delete", function (req, res){
-  const id = req.body.id
-  connection.query("DELETE FROM `users` WHERE id=?",
-  [id],
-  function (err, results) {
-    res.json(results);
-  })
-})
+app.delete("/users/delete", function (req, res) {
+  const id = req.body.id;
+  connection.query(
+    "DELETE FROM `users` WHERE id=?",
+    [id],
+    function (err, results) {
+      res.json(results);
+    }
+  );
+});
 
 app.listen(5000, function () {
   console.log("Web server listening on port 5000");
