@@ -51,8 +51,8 @@ app.post("/users", function (req, res) {
 });
 
 //update user information with id
-app.put("/users/:id", function (req, res) {
-  const id = req.params.id;
+app.put("/users", function (req, res) {
+  const id = req.body.id;
   connection.query(
     "UPDATE `users` SET `fname`=?,`lname`=?,`username`=?,`email`=?,`avatar`=? WHERE id=?",
     [
